@@ -9,7 +9,4 @@ const rootReducer = combineReducers({
 // RootState type for useSelector
 export type RootState = ReturnType<typeof rootReducer>;
 
-export const store = createStore(
-  rootReducer,
-  (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
-);
+export const store = createStore(rootReducer);
