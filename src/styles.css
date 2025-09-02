@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 @layer components {
   .navbar {
     @apply flex justify-between gap-4 border-b border-gray-200 px-4 py-2 dark:border-gray-700;
