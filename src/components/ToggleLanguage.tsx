@@ -1,11 +1,23 @@
-import React from 'react';
+import { Menu, MenuItem, MenuList, MenuPopover, MenuTrigger } from '@fluentui/react-components';
 import { Icons } from './Icons';
 
 function ToggleLanguage() {
   return (
-    <button className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full">
-      <Icons.Language className="w-full text-gray-500 dark:text-white" size={20} />
-    </button>
+    <Menu positioning={{ autoSize: true, position: 'below', align: 'end' }}>
+      <MenuTrigger disableButtonEnhancement>
+        <div className="flex cursor-pointer items-center justify-center gap-1">
+          <Icons.Language /> <span>EN</span>
+        </div>
+      </MenuTrigger>
+
+      <MenuPopover>
+        <MenuList>
+          <MenuItem>English </MenuItem>
+          <MenuItem>French</MenuItem>
+          <MenuItem>Spanish</MenuItem>
+        </MenuList>
+      </MenuPopover>
+    </Menu>
   );
 }
 

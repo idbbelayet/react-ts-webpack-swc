@@ -1,8 +1,12 @@
 import React from 'react';
 import { Icons } from '../components/Icons';
+import { useDispatch } from 'react-redux';
+import { TOGGLE_THEME } from '../store/themeTypes';
 const ToggleTheme = () => {
+  const dispatch = useDispatch();
   const [isDark, setIsDark] = React.useState<boolean | null>(null);
   const toggleTheme = () => {
+    dispatch({ type: TOGGLE_THEME });
     if (document.documentElement.classList.contains('dark')) {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');

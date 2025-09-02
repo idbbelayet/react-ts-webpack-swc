@@ -1,29 +1,33 @@
-import React, { useState } from 'react';
-import { Stack, IStackTokens } from '@fluentui/react';
-import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
+import { Button } from '@fluentui/react-components';
+import { Icons } from './Icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../store/store';
+import { INCREMENT, DECREMENT } from '../store/counterTypes';
 
 function Counter() {
-  const [count, setCount] = useState<number>(0);
+  const value = useSelector((state: RootState) => state.counter.value);
+  const dispatch = useDispatch();
 
   const handleIncreament = () => {
-    setCount(count + 1);
+    dispatch({ type: INCREMENT });
   };
 
   const handleDecreament = () => {
-    setCount(count - 1);
+    dispatch({ type: DECREMENT });
   };
   return (
     <div className="mt-5">
-      <div className="text-xl font-semibold">Total Click : {count}</div>
-      <Stack
-        horizontal
-        horizontalAlign="center"
-        tokens={{ childrenGap: 20 } as IStackTokens}
-        className="mt-5"
-      >
-        <DefaultButton className="ms-Button" text="Increament" onClick={handleIncreament} />
-        <PrimaryButton text="Decreament" onClick={handleDecreament} />
-      </Stack>
+      <div className="text-xl font-semibold">Total Click : {value}</div>
+      <div className="mt-3 flex items-center justify-center gap-3">
+        <Button appearance="primary" className="ms-Button" onClick={handleIncreament}>
+          <Icons.Add className="mr-1 w-full" size={16} />
+          Increament
+        </Button>
+        <Button appearance="secondary" onClick={handleDecreament}>
+          <Icons.Minus className="mr-1 w-full" size={16} />
+          Decreament
+        </Button>
+      </div>
     </div>
   );
 }

@@ -12,8 +12,14 @@ import {
 } from 'react-icons/md';
 
 // Ant Design
-import { AiFillGithub, AiOutlineSearch, AiOutlineUser } from 'react-icons/ai';
-import { SiSwc, SiTailwindcss, SiTypescript, SiWebpack } from 'react-icons/si';
+import {
+  AiFillGithub,
+  AiOutlineMinus,
+  AiOutlinePlus,
+  AiOutlineSearch,
+  AiOutlineUser,
+} from 'react-icons/ai';
+import { SiSwc, SiTailwindcss, SiTypescript, SiWebpack, SiFluentbit } from 'react-icons/si';
 // Bootstrap
 import { BsBell, BsFillHeartFill } from 'react-icons/bs';
 
@@ -48,4 +54,7 @@ export const Icons = {
   typescript: (props: IconProps) => <SiTypescript {...props} />,
   swc: (props: IconProps) => <SiSwc {...props} />,
   tailwind: (props: IconProps) => <SiTailwindcss {...props} />,
+  FluentUi: (props: IconProps) => <SiFluentbit {...props} />,
+  Add: (props: IconProps) => <AiOutlinePlus {...props} />,
+  Minus: (props: IconProps) => <AiOutlineMinus {...props} />,
 };
