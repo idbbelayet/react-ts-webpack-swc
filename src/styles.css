@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-100 text-gray-900 dark:bg-gray-800;
+}
+
+@layer components {
+  .navbar {
+    @apply flex justify-between gap-4 border-b border-gray-200 bg-white px-4 py-2 text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-white;
+  }
+  .navbar a {
+    @apply border-b-2 border-b-transparent pb-0.5 text-gray-900 transition duration-200 hover:border-red-700 hover:text-red-700 dark:text-white dark:hover:text-red-600;
+  }
+  .active {
+    @apply border-b-2 border-red-700 pb-1 font-semibold text-red-700 dark:border-red-600 dark:text-red-600 !important;
+  }
+  .ms-Button {
+    @apply rounded !important;
+  }
+  .ms-TextField-fieldGroup {
+    @apply rounded border border-gray-500 outline-0 before:border-none after:border-gray-500 after:border-b-red-600 focus-within:border focus-within:after:rounded focus-within:after:border focus-within:after:border-b-2 focus:border focus-visible:border !important;
+  }
+}
