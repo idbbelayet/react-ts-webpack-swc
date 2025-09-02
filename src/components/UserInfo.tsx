@@ -35,8 +35,8 @@ function UserInfo() {
 
       <MenuPopover>
         <MenuList>
-          <MenuItem icon={<CgProfile className="text-gray-500" />}>Profile </MenuItem>
-          <MenuItem icon={<PiSignOut className="text-gray-500" />}>Signout</MenuItem>
+          <MenuItem icon={<CgProfile />}>Profile </MenuItem>
+          <MenuItem icon={<PiSignOut />}>Signout</MenuItem>
         </MenuList>
       </MenuPopover>
     </Menu>
