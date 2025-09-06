@@ -8,7 +8,7 @@ export default function Home() {
         <p className="mt-5">This is the Home page loaded via React Router.</p>
         <div className="flex items-center justify-center">
           <h1 className="mt-3 text-4xl font-bold">
-            React + TypeScript + Webpack + SWC + Tailwind CSS 🚀
+            React + TypeScript + Webpack + SWC + Tailwind CSS + Fluent UI 🚀
           </h1>
         </div>
         <Counter />

@@ -21,11 +21,27 @@ function Counter() {
       <div className="mt-3 flex items-center justify-center gap-3">
         <Button appearance="primary" className="ms-Button" onClick={handleIncreament}>
           <Icons.Add className="mr-1 w-full" size={16} />
-          Increament
+          Primary
         </Button>
+
         <Button appearance="secondary" onClick={handleDecreament}>
           <Icons.Minus className="mr-1 w-full" size={16} />
-          Decreament
+          Secondary
+        </Button>
+
+        <Button appearance="outline" onClick={handleDecreament}>
+          <Icons.Minus className="mr-1 w-full" size={16} />
+          Outline
+        </Button>
+
+        <Button appearance="transparent" onClick={handleDecreament}>
+          <Icons.Minus className="mr-1 w-full" size={16} />
+          Transparent
+        </Button>
+
+        <Button appearance="subtle" onClick={handleDecreament}>
+          <Icons.Minus className="mr-1 w-full" size={16} />
+          Subtle
         </Button>
       </div>
     </div>

@@ -1,24 +1,26 @@
-import { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { lazy } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Navbar from './components/Navbar';
+
 import FluentForm from './components/FluentForm';
+import MainLayout from './Layouts/MainLayout';
+import ReduxForm from './pages/ReduxForm';
 const About = lazy(() => import('./pages/About'));
 const IconExample = lazy(() => import('./pages/IconExample'));
-
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <MainLayout />, // Layout wraps nested routes
+    children: [
+      { index: true, element: <Home /> }, // default route
+      { path: 'about', element: <About /> },
+      { path: 'icons', element: <IconExample /> },
+      { path: 'form', element: <FluentForm /> },
+      { path: 'reduxform', element: <ReduxForm /> },
+    ],
+  },
+]);
 export default function App() {
-  return (
-    <BrowserRouter>
-      <Navbar />
-      <Suspense fallback={<p className="p-6">Loading...</p>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/icons" element={<IconExample />} />
-          <Route path="/form" element={<FluentForm />} />
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 }
